@@ -14,7 +14,7 @@
 "properties_attributes": {},
 "properties": {
 "domains": "SPECIFYREALM",
-"manage_krb5_conf": "true"
+"manage_krb5_conf": "false"
 }
 }
 }],
