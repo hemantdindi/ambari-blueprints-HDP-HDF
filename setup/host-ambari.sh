@@ -34,6 +34,7 @@ export REALM="${realm^^}"
 export KDC_HOST=`hostname -f`
 yum -y install krb5-server krb5-libs krb5-workstation
 cp /etc/krb5.conf .
+mv /etc/krb5.conf /tmp/
 sed -i "s/EXAMPLE.COM/$REALM/g" krb5.conf
 sed -i "s/example.com/$realm/g" krb5.conf
 sed -i "s/kerberos.$realm/$KDC_HOST/g" krb5.conf
