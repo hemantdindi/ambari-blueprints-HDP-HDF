@@ -13,14 +13,17 @@ Execute the below scripts on the host -
     sh configure-scripts.sh
 
 Please ensure ambari-server and ambari-agent are up and running
-
+    
+    ambari-server status
+    ambari-agent status
     sh registerBluePrint.sh
 	   
 You should see a output similar to this -
-{
-  "href" : "http://hemant.hadoophdp.com:8080/api/v1/clusters/hdp25sn/requests/1",
-  "Requests" : {
-    "id" : 1,
-    "status" : "Accepted"
-  }
-}
+
+      {
+      "href" : "http://hemant.hadoophdp.com:8080/api/v1/clusters/hdp25sn/requests/1",
+      "Requests" : {
+      "id" : 1,
+      "status" : "Accepted"
+       } 
+     }
