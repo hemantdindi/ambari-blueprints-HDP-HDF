@@ -3,8 +3,8 @@
 #This is tested in a CentOS 7 64 Bit Server
 
 The below script will configure your single host with all the pre-requisites for a single node HDP 2.5 instance.
-It will configure passwordless-ssh, install ambari-server, ambari-agent and configure them as per you node details.
-It will set up ambari server in the silent mode and install Java Accordingly.
+It will setup passwordless-ssh, install ambari-server, ambari-agent and configure them as per you node details.
+It will configure ambari server in the silent mode and install Java Accordingly.
 
     cd ~
     yum install git -y
