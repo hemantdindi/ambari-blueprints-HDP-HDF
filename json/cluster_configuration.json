@@ -1,0 +1,122 @@
+{
+"configurations": [{
+"kerberos-env": {
+"properties_attributes": {},
+"properties": {
+"realm": "SPECIFYREALM",
+"kdc_type": "mit-kdc",
+"kdc_host": "blueprintclusterhost",
+"admin_server_host": "blueprintclusterhost"
+}
+}
+}, {
+"krb5-conf": {
+"properties_attributes": {},
+"properties": {
+"domains": "SPECIFYREALM",
+"manage_krb5_conf": "true"
+}
+}
+}],
+"host_groups": [{
+"name": "hdp25sn",
+"components": [
+        {
+          "name" : "NODEMANAGER"
+        },
+        {
+          "name" : "RANGER_TAGSYNC"
+        },
+        {
+          "name" : "HIVE_SERVER"
+        },
+        {
+          "name" : "HBASE_MASTER"
+        },
+        {
+          "name" : "HIVE_METASTORE"
+        },
+        {
+          "name" : "TEZ_CLIENT"
+        },
+        {
+          "name" : "ZOOKEEPER_CLIENT"
+        },
+        {
+          "name" : "HCAT"
+        },
+        {
+          "name" : "WEBHCAT_SERVER"
+        },
+        {
+          "name" : "RANGER_ADMIN"
+        },
+        {
+          "name" : "SECONDARY_NAMENODE"
+        },
+        {
+          "name" : "SLIDER"
+        },
+        {
+          "name" : "ZOOKEEPER_SERVER"
+        },
+        {
+          "name" : "HBASE_REGIONSERVER"
+        },
+        {
+          "name" : "KERBEROS_CLIENT"
+        },
+        {
+          "name" : "PHOENIX_QUERY_SERVER"
+        },
+        {
+          "name" : "YARN_CLIENT"
+        },
+        {
+          "name" : "HDFS_CLIENT"
+        },
+        {
+          "name" : "HISTORYSERVER"
+        },
+        {
+          "name" : "NAMENODE"
+        },
+        {
+          "name" : "PIG"
+        },
+        {
+          "name" : "MAPREDUCE2_CLIENT"
+        },
+        {
+          "name" : "AMBARI_SERVER"
+        },
+        {
+          "name" : "DATANODE"
+        },
+        {
+          "name" : "HBASE_CLIENT"
+        },
+        {
+          "name" : "RANGER_USERSYNC"
+        },
+        {
+          "name" : "APP_TIMELINE_SERVER"
+        },
+        {
+          "name" : "HIVE_CLIENT"
+        },
+        {
+          "name" : "RESOURCEMANAGER"
+        }
+],
+"cardinality": 1
+}],
+"Blueprints": {
+"blueprint_name": "hdp25sn",
+"stack_name": "HDP",
+"stack_version": "2.5",
+"security": {
+"type": "KERBEROS"
+}
+}
+}

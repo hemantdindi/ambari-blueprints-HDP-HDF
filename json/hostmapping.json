@@ -1,0 +1,26 @@
+{
+  "blueprint" : "hdp25sn",
+  "default_password" : "hadoophdp",
+  "host_groups" :[
+{
+      "name" : "bluetest",
+      "hosts" : [
+        {
+          "fqdn" : "blueprintclusterhost"
+        }
+      ]
+    }
+  ],
+    "credentials" : [
+     {
+       "alias" : "kdc.admin.credential",
+       "principal" : "admin/admin",
+       "key" : "hadoop",
+       "type" : "TEMPORARY"
+     }
+    ],
+    "security" : {
+        "type" : "KERBEROS"
+   },
+   "Clusters" : {"cluster_name":"hdp25sn"}
+}
