@@ -1,4 +1,4 @@
-# hdp-sn-blueprint
+# hdp-sn-blueprint [WIP]
 
 #This is tested in a CentOS 7 64 Bit Server
 
