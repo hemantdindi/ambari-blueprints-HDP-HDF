@@ -1,5 +1,5 @@
 {
-  "blueprint" : "hdp25sn",
+  "blueprint" : "hdp25snbp",
   "default_password" : "hadoophdp",
   "host_groups" :[
 {
