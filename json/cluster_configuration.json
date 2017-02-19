@@ -19,7 +19,7 @@
 }
 }],
 "host_groups": [{
-"name": "hdp25sn",
+"name": "hdpgroup",
 "components": [
         {
           "name" : "NODEMANAGER"
@@ -112,7 +112,7 @@
 "cardinality": 1
 }],
 "Blueprints": {
-"blueprint_name": "hdp25sn",
+"blueprint_name": "hdp25snbp",
 "stack_name": "HDP",
 "stack_version": "2.5",
 "security": {
