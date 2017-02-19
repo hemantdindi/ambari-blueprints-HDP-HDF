@@ -3,7 +3,7 @@
   "default_password" : "hadoophdp",
   "host_groups" :[
 {
-      "name" : "hdp25sn",
+      "name" : "hdpgroup",
       "hosts" : [
         {
           "fqdn" : "blueprintclusterhost"
