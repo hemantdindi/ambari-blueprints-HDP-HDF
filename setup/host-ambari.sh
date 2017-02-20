@@ -20,10 +20,22 @@ systemctl enable httpd
 service firewalld stop
 systemctl disable firewalld
 wget -nv http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.4.2.0/ambari.repo -O /etc/yum.repos.d/ambari.repo
+wget --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.rpm
+wget --header "Cookie: oraclelicense=accept-securebackup-cookie"  http://download.oracle.com/otn-pub/java/jce/8/jce_policy-8.zip
+rpm -ivh jdk-8u102-linux-x64.rpm
+echo "export JAVA_HOME=/usr/java/default" >> ~/.bashrc
+echo "export PATH=\$PATH:\$JAVA_HOME/bin" >> ~/.bashrc
+unzip -o -j -q jce_policy-8.zip -d /usr/java/default/jre/lib/security/
+source ~/.bashrc
 yum install ambari-server -y
+ambari-server setup << EOF
+n
+3
+/usr/java/default
+n
+EOF
 mkdir -p /usr/share/java
 wget -nv https://jdbc.postgresql.org/download/postgresql-9.4.1212.jre6.jar -O /usr/share/java/postgresql-jdbc.jar
-ambari-server setup -s 
 ambari-server setup --jdbc-db=postgres --jdbc-driver=/usr/share/java/postgresql-jdbc.jar
 ambari-server start
 yum install ambari-agent -y
@@ -62,3 +74,4 @@ passwd root <<EOF
 hadoophdp
 hadoophdp
 EOF
+ambari-server restart
