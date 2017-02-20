@@ -1,4 +1,8 @@
 #!/bin/sh
+passwd root <<EOF
+hadoophdp
+hadoophdp
+EOF
 cd ~
 mkdir node-setup
 cd node-setup
@@ -70,8 +74,4 @@ grant all privileges on database hivedb to hiveuser;
 EOF
 echo "host all all 0.0.0.0/0 trust" >> /var/lib/pgsql/data/pg_hba.conf
 service postgresql restart
-passwd root <<EOF
-hadoophdp
-hadoophdp
-EOF
 ambari-server restart
