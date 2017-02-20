@@ -1,32 +1,49 @@
 {
-"configurations": [{
+"configurations": [
+{
 "kerberos-env": {
 "properties_attributes": {},
-"properties": {
-"realm": "SPECIFYREALM",
-"kdc_type": "mit-kdc",
-"kdc_host": "blueprintclusterhost",
-"admin_server_host": "blueprintclusterhost"
-}
-}
+		"properties": {
+		"realm": "SPECIFYREALM",
+		"kdc_type": "mit-kdc",
+		"kdc_host": "blueprintclusterhost",
+		"admin_server_host": "blueprintclusterhost"
+		}
+	}
 }, {
 "krb5-conf": {
 "properties_attributes": {},
-"properties": {
-"domains": "SPECIFYREALM",
-"manage_krb5_conf": "false"
-}
-}
-}],
+		"properties": {
+		"domains": "SPECIFYREALM",
+		"manage_krb5_conf": "false"
+		}
+	}
+}, {
+"hive-site" : {
+        "properties" : {
+          "javax.jdo.option.ConnectionDriverName" : "org.postgresql.Driver",
+          "javax.jdo.option.ConnectionURL" : "jdbc:postgresql://blueprintclusterhost:5432/hivedb",
+          "javax.jdo.option.ConnectionUserName": "hiveuser"
+        }
+	}
+},
+    {
+      "hive-env" : {
+        "properties" : {
+          "hive_database" : "Existing PostgreSQL Database",
+          "hive_database_name" : "hivedb",
+          "hive_database_type" : "postgres",
+          "hive_hostname" : "blueprintclusterhost"
+        }
+      }
+    }	
+],
 "host_groups": [{
 "name": "hdpgroup",
 "components": [
         {
           "name" : "NODEMANAGER"
-        },
-        {
-          "name" : "RANGER_TAGSYNC"
-        },
+        },        
         {
           "name" : "HIVE_SERVER"
         },
@@ -47,9 +64,6 @@
         },
         {
           "name" : "WEBHCAT_SERVER"
-        },
-        {
-          "name" : "RANGER_ADMIN"
         },
         {
           "name" : "SECONDARY_NAMENODE"
@@ -95,9 +109,6 @@
         },
         {
           "name" : "HBASE_CLIENT"
-        },
-        {
-          "name" : "RANGER_USERSYNC"
         },
         {
           "name" : "APP_TIMELINE_SERVER"
