@@ -28,7 +28,7 @@ echo "export PATH=\$PATH:\$JAVA_HOME/bin" >> ~/.bashrc
 unzip -o -j -q jce_policy-8.zip -d /usr/java/default/jre/lib/security/
 source ~/.bashrc
 yum install ambari-server -y
-ambari-server setup << EOF
+ambari-server setup <<EOF
 n
 3
 /usr/java/default
