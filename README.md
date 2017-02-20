@@ -21,8 +21,8 @@ Execute the below command to enable installation using blueprint
 
 Please ensure ambari-server and ambari-agent are up and running
 
-    ambari-server setup --jdbc-db=mysql --jdbc-driver=/usr/share/java/mysql-connector-java.jar
     ambari-server restart
+    ambari-agent restart
     ambari-server status
     ambari-agent status
 
