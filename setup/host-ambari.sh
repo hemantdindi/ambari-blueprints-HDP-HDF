@@ -41,10 +41,8 @@ EOF
 mkdir -p /usr/share/java
 wget -nv https://jdbc.postgresql.org/download/postgresql-9.4.1212.jre6.jar -O /usr/share/java/postgresql-jdbc.jar
 ambari-server setup --jdbc-db=postgres --jdbc-driver=/usr/share/java/postgresql-jdbc.jar
-ambari-server start
 yum install ambari-agent -y
 sed -i 's/hostname=localhost/'hostname="$HOSTNAME"'/g' /etc/ambari-agent/conf/ambari-agent.ini
-ambari-agent start
 export realm=`hostname -d`
 export REALM="${realm^^}"
 export KDC_HOST=`hostname -f`
