@@ -64,13 +64,13 @@ sed -i 's/hostname=localhost/'hostname="$HOSTNAME"'/g' /etc/ambari-agent/conf/am
 #sed -i "s/EXAMPLE.COM/$REALM/g" /var/kerberos/krb5kdc/kadm5.acl
 #service krb5kdc restart
 #service kadmin restart
-service postgresql restart
-su postgres -c psql <<EOF
-\x
-create database hivedb;
-create user hiveuser with password 'hadoop';
-grant all privileges on database hivedb to hiveuser;
-EOF
-echo "host all all 0.0.0.0/0 trust" >> /var/lib/pgsql/data/pg_hba.conf
-service postgresql restart
-ambari-server restart
+#service postgresql restart
+#su postgres -c psql <<EOF
+#\x
+#create database hivedb;
+#create user hiveuser with password 'hadoop';
+#grant all privileges on database hivedb to hiveuser;
+#EOF
+#echo "host all all 0.0.0.0/0 trust" >> /var/lib/pgsql/data/pg_hba.conf
+#service postgresql restart
+#ambari-server restart
