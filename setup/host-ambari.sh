@@ -6,9 +6,10 @@ EOF
 cd ~
 mkdir node-setup
 cd node-setup
-cp /etc/hosts .
-head -2 hosts > /etc/hosts 
-ip a | grep 'inet' | grep eth0 | cut -d: -f2 | awk '{ print $2}' | tr "/" " " | awk '{ print $1}' > ipaddr
+#cp /etc/hosts .
+echo "127.0.0.1 localhost.localdomain localhost" > /etc/hosts
+echo "127.0.0.1 localhost4.localdomain4 localhost4" >> /etc/hosts
+ip a | grep 'inet' | grep eth0 | cut -d: -f2 | awk '{ print $2}' | tr "/" " " | awk '{ print $1}' | head -n 1 > ipaddr
 hostname -f | tr "." " " | awk '{ print $1}' > hostname
 hostname -f > fqdn
 cat ipaddr fqdn hostname | xargs >> /etc/hosts
