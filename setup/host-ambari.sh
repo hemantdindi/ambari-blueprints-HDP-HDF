@@ -44,6 +44,14 @@ wget -nv https://jdbc.postgresql.org/download/postgresql-9.4.1212.jre6.jar -O /u
 ambari-server setup --jdbc-db=postgres --jdbc-driver=/usr/share/java/postgresql-jdbc.jar
 yum install ambari-agent -y
 sed -i 's/hostname=localhost/'hostname="$HOSTNAME"'/g' /etc/ambari-agent/conf/ambari-agent.ini
+wget http://www.issihosts.com/haveged/haveged-1.9.1.tar.gz
+yum install -y gcc-c++
+cd ./haveged-1.9.1
+./configure
+make
+make install
+haveged -w 1024
+echo "/usr/local/sbin/haveged -w 1024" >> /etc/rc.local
 export realm=`hostname -d`
 export REALM="${realm^^}"
 export KDC_HOST=`hostname -f`
