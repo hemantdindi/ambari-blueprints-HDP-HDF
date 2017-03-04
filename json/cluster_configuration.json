@@ -6,15 +6,15 @@
 		"properties": {
 		"realm": "SPECIFYREALM",
 		"kdc_type": "mit-kdc",
-		"kdc_host": "blueprintclusterhost",
-		"admin_server_host": "blueprintclusterhost"
+		"kdc_host": "{{ blueprintclusterhost }}",
+		"admin_server_host": "{{ blueprintclusterhost }}"
 		}
 	}
 }, {
 "krb5-conf": {
 "properties_attributes": {},
 		"properties": {
-		"domains": "SPECIFYREALM",
+		"domains": "SPECIFYDOMAIN",
 		"manage_krb5_conf": "false"
 		}
 	}
