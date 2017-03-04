@@ -85,3 +85,6 @@ EOF
 echo "host all all 0.0.0.0/0 trust" >> /var/lib/pgsql/data/pg_hba.conf
 service postgresql restart
 ambari-server restart
+ambari-agent restart
+ambari-server status
+ambari-agent status
