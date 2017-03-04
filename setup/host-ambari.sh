@@ -48,6 +48,7 @@ ambari-server restart
 yum install ambari-agent -y
 sed -i 's/hostname=localhost/'hostname="$HOSTNAME"'/g' /etc/ambari-agent/conf/ambari-agent.ini
 wget http://www.issihosts.com/haveged/haveged-1.9.1.tar.gz
+tar -zxvf haveged-1.9.1.tar.gz
 yum install -y gcc-c++
 cd ./haveged-1.9.1
 ./configure
