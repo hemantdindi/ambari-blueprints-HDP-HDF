@@ -1,4 +1,4 @@
-# hdp-sn-blueprint
+# HDP single node installation using Ambari Blueprints with Kerberos Enabled.
 
 #This is tested in a CentOS 7 64 Bit Server on a Digital Ocean Droplet
 
