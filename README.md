@@ -1,6 +1,6 @@
 # HDP single node installation using Ambari Blueprints with Kerberos Enabled.
 
-#This is tested in a CentOS 7 64 Bit Server on a Digital Ocean Droplet
+##This is tested in a CentOS 7 64 Bit Server on a Digital Ocean Droplet
 
 The below script will configure your single host with all the pre-requisites for a single node HDP 2.5 instance.
 It will setup passwordless-ssh, install ambari-server, ambari-agent, setup kdc and configure as per you node details.
