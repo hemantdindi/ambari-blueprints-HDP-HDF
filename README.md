@@ -32,5 +32,9 @@ You should see a the below output when you execute the last statement -
      }
 
 Please login to ambari using the default[admin/admin] credentials. You should see the progress of installation.
+ 
 ![Alt text](./Ambari-BP-1.PNG)
+  
 ![Alt text](./Ambari-BP-2.PNG)
+
+
