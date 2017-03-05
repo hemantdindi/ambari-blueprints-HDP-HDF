@@ -24,7 +24,7 @@ When you create the Droplet, ensure that in the User Data section, you add the s
 
 Login to the droplet with credentials [root/hadoophdp]
 	
-	tail -f cloud-init-output.log
+	tail -f /var/log/cloud-init-output.log
    
 You should see a the below output when all the commands are executed -
 
