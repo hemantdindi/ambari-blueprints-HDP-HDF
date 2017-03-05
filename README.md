@@ -1,4 +1,4 @@
-# hdp-sn-blueprint [WIP]
+# hdp-sn-blueprint
 
 #This is tested in a CentOS 7 64 Bit Server on a Digital Ocean Droplet
 
@@ -6,30 +6,21 @@ The below script will configure your single host with all the pre-requisites for
 It will setup passwordless-ssh, install ambari-server, ambari-agent and configure them as per you node details.
 It will configure ambari server in the silent mode and install Java Accordingly.
 
-    cd ~
-    yum install git -y
-    git clone https://github.com/hemantdindi/hdp-sn-blueprint.git
-    chmod +x -R hdp-sn-blueprint/
-    cd hdp-sn-blueprint/setup/
-    sh host-ambari.sh
-    
-Execute the below command to enable installation using blueprint
-
-    cd ~
-    cd hdp-sn-blueprint/json
-    sh configure-scripts.sh
-
-Please ensure ambari-server and ambari-agent are up and running
-
-    ambari-server restart
-    ambari-agent restart
-    ambari-server status
-    ambari-agent status
-
-Execute the statements of the script file sequentially
-
-    registerBluePrint.sh
-	   
+	#!/bin/sh
+	cd ~
+	yum install git -y
+	git clone https://github.com/hemantdindi/hdp-sn-blueprint.git
+	chmod +x -R hdp-sn-blueprint/
+	cd hdp-sn-blueprint/setup/
+	sh host-ambari.sh
+	cd ../json/
+	sh configure-scripts.sh
+	ambari-server start
+	ambari-agent start
+	ambari-server status
+	ambari-agent status
+	sh registerBluePrint.sh
+   
 You should see a the below output when you execute the last statement -
 
       {
@@ -39,3 +30,7 @@ You should see a the below output when you execute the last statement -
       "status" : "Accepted"
        } 
      }
+
+Please login to ambari using the default[admin/admin] credentials. You should see the progress of installation.
+![Alt text](./Ambari-BP-1.PNG)
+![Alt text](./Ambari-BP-2.PNG)
