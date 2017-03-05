@@ -15,7 +15,7 @@
 "properties_attributes": {},
 		"properties": {
 		"domains": "SPECIFYDOMAIN",
-		"manage_krb5_conf": "false"
+		"manage_krb5_conf": "true"
 		}
 	}
 }, {
