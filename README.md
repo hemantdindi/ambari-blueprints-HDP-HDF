@@ -42,4 +42,4 @@ Please login to ambari using the default[admin/admin] credentials. You should se
   
 ![Alt text](./Ambari-BP-2.PNG)
 
-
+The installation will take 20-30 mins.
