@@ -27,7 +27,7 @@ Login to the droplet with credentials [root/hadoophdp]
 	
 	tail -f cloud-init-output.log
    
-You should see a the below output when you execute the last statement -
+You should see a the below output when all the commands are executed -
 
       {
       "href" : "http://hemant.hadoophdp.com:8080/api/v1/clusters/hdp25sn/requests/1",
