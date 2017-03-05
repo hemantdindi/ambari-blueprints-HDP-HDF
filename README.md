@@ -21,11 +21,9 @@ When you create the Droplet, ensure that in the User Data section, you add the s
 	sh configure-scripts.sh
 	ambari-server start
 	ambari-agent start
-	ambari-server status
-	ambari-agent status
 	sh registerBluePrint.sh
 
-Login to the droplet with creadentials [root/hadoophdp]
+Login to the droplet with credentials [root/hadoophdp]
 	
 	tail -f cloud-init-output.log
    
