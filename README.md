@@ -3,25 +3,24 @@
 #This is tested in a CentOS 7 64 Bit Server on a Digital Ocean Droplet
 
 The below script will configure your single host with all the pre-requisites for a single node HDP 2.5 instance.
-It will setup passwordless-ssh, install ambari-server, ambari-agent and configure them as per you node details.
-It will configure ambari server in the silent mode and install Java Accordingly.
+It will setup passwordless-ssh, install ambari-server, ambari-agent, setup kdc and configure as per you node details.
 
 When you create the Droplet, ensure that in the User Data section, you add the script as below - 
 
 ![Alt text](./Droplet-Data.PNG) 
 
-	#!/bin/sh
-	cd ~
-	yum install git -y
-	git clone https://github.com/hemantdindi/hdp-sn-blueprint.git
-	chmod +x -R hdp-sn-blueprint/
-	cd hdp-sn-blueprint/setup/
-	sh host-ambari.sh
-	cd ../json/
-	sh configure-scripts.sh
-	ambari-server start
-	ambari-agent start
-	sh registerBluePrint.sh
+			#!/bin/sh
+			cd ~
+			yum install git -y
+			git clone https://github.com/hemantdindi/hdp-sn-blueprint.git
+			chmod +x -R hdp-sn-blueprint/
+			cd hdp-sn-blueprint/setup/
+			sh host-ambari.sh
+			cd ../json/
+			sh configure-scripts.sh
+			ambari-server start
+			ambari-agent start
+			sh registerBluePrint.sh
 
 Login to the droplet with credentials [root/hadoophdp]
 	
