@@ -6,7 +6,7 @@ The below script will configure your single host with all the pre-requisites for
 It will setup passwordless-ssh, install ambari-server, ambari-agent and configure them as per you node details.
 It will configure ambari server in the silent mode and install Java Accordingly.
 
-When you create the Droplet, ensure that in the data section, you add the script as below - 
+When you create the Droplet, ensure that in the User Data section, you add the script as below - 
 
 ![Alt text](./Droplet-Data.PNG)
 
