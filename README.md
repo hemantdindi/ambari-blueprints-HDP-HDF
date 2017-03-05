@@ -8,7 +8,22 @@ It will configure ambari server in the silent mode and install Java Accordingly.
 
 When you create the Droplet, ensure that in the User Data section, you add the script as below - 
 
-![Alt text](./Droplet-Data.PNG)
+![Alt text](./Droplet-Data.PNG) 
+
+	#!/bin/sh
+	cd ~
+	yum install git -y
+	git clone https://github.com/hemantdindi/hdp-sn-blueprint.git
+	chmod +x -R hdp-sn-blueprint/
+	cd hdp-sn-blueprint/setup/
+	sh host-ambari.sh
+	cd ../json/
+	sh configure-scripts.sh
+	ambari-server start
+	ambari-agent start
+	ambari-server status
+	ambari-agent status
+	sh registerBluePrint.sh
 
 Login to the droplet with creadentials [root/hadoophdp]
 	
