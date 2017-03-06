@@ -1,5 +1,5 @@
 #!/bin/sh
-export AMBARISERVER=node01.hdphadoop.com
+export AMBARISERVER=node01.hadoophdp.com
 passwd root <<EOF
 hadoophdp
 hadoophdp
