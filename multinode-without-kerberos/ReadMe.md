@@ -16,13 +16,13 @@ node01.hadoophdp.com acts as the ambari server.
 _At this point ambari-agent's are not started._
 _Ensure DNS/Rev. DNS is working among the nodes, else modify /etc/hosts on all hosts as per your IP's_
 
-In my case, I updated /etc/hosts - 
-###### 159.203.92.66  node01.hadoophdp.com node01
-###### 159.203.75.157 node02.hadoophdp.com node02
-###### 159.203.92.163 node03.hadoophdp.com node03
-
+In my case, I updated /etc/hosts 
 
 Follow the below steps - 
+
+* On Ambari-server host, execute the following - 
+      yum install git -y
+      
 
 ![Alt text](./images/multinode-install-1.PNG)
 
