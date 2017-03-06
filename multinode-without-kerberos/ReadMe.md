@@ -22,6 +22,7 @@ Follow the below steps -
 
 * On Ambari-server host, execute the following - 
 
+
       yum install git -y
       git clone https://github.com/hemantdindi/hdp-ambari-blueprints.git
       cd hdp-ambari-blueprints/multinode-without-kerberos/json/
