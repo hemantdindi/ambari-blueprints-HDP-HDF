@@ -24,7 +24,7 @@
 	 {
 	 "name": "hostname1",
 	 "components": [
-		 	{  "name" : "AMBARI_SERVER"     }
+		 	{  "name" : "AMBARI_SERVER"     },
 			{  "name": "NAMENODE"  		}, 	 			
 			{  "name": "WEBHCAT_SERVER"  	}, 
 			{  "name": "ZOOKEEPER_SERVER"  	}, 
