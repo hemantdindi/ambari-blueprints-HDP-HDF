@@ -4,7 +4,9 @@
 
 Note that the hostnames are as below - 
 node01.hadoophdp.com
+
 node02.hadoophdp.com
+
 node03.hadoophdp.com
 
 node01.hadoophdp.com acts as the ambari server.
