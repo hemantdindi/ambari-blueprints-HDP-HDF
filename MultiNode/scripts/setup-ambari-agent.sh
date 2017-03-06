@@ -28,5 +28,4 @@ echo "export PATH=\$PATH:\$JAVA_HOME/bin" >> ~/.bashrc
 source ~/.bashrc
 yum install ambari-agent -y
 sed -i 's/hostname=localhost/'hostname="$AMBARISERVER"'/g' /etc/ambari-agent/conf/ambari-agent.ini
-ambari-agent restart
 ambari-agent status
