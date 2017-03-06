@@ -1,2 +1,2 @@
 # Single Node HDP Cluster with Kerberos
-- [Click Here](./Single-Node-with-Kerberos/README.md)
+- [Click Here](./Single-Node-with-Kerberos/README.md) for the steps
