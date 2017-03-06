@@ -1,2 +1,2 @@
 # Single Node HDP Cluster with Kerberos
-⋅⋅* [Click Here](../blob/master/LICENSE)
+⋅⋅* [Click Here](../Single-Node-with-Kerberos/README.md)
