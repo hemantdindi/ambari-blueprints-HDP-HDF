@@ -13,6 +13,17 @@ node01.hadoophdp.com acts as the ambari server.
 ##### On node01, execute the script - setup-ambari-server.sh
 ##### On node02, node03, execute the script - setup-ambari-agent.sh
 
+_At this point ambari-agent's are not started._
+_Ensure DNS/Rev. DNS is working among the nodes, else modify /etc/hosts on all hosts as per your IP's_
+
+In my case, I updated /etc/hosts - 
+*159.203.92.66  node01.hadoophdp.com node01
+*159.203.75.157 node02.hadoophdp.com node02
+*159.203.92.163 node03.hadoophdp.com node03
+
+
+Follow the below steps - 
+
 ![Alt text](./images/multinode-install-1.PNG)
 
 ![Alt text](./images/multinode-install-2.PNG)
