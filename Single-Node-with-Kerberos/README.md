@@ -12,9 +12,9 @@ When you create the Droplet, ensure that in the User Data section, you add the s
 			#!/bin/sh
 			cd ~
 			yum install git -y
-			git clone https://github.com/hemantdindi/hdp-sn-blueprint.git
-			chmod +x -R hdp-sn-blueprint/
-			cd hdp-sn-blueprint/setup/
+			git clone https://github.com/hemantdindi/hdp-ambari-blueprints.git
+			chmod +x -R hdp-ambari-blueprints
+			cd hdp-ambari-blueprints/Single-Node-with-Kerberos/setup/
 			sh host-ambari.sh
 			cd ../json/
 			sh configure-scripts.sh
