@@ -1,0 +1,18 @@
+{
+"blueprint" : "hdp25mn",
+"default_password" : "hadoophdp",
+	"host_groups" :[
+	  {
+	  "name" : "hostname1",
+	  "hosts" : [{"fqdn" : "HOSTNAME1" }]
+	  },
+	  {
+	  "name" : "hostname2",
+	  "hosts" : [{"fqdn" : "HOSTNAME2" }]
+	  },
+	  {
+	  "name" : "hostname3",
+	  "hosts" : [{"fqdn" : "HOSTNAME3" }]
+	  }
+	]
+}
