@@ -14,7 +14,7 @@ When you create the Droplet, ensure that in the User Data section, you add the s
 			yum install git -y
 			git clone https://github.com/hemantdindi/hdp-ambari-blueprints.git
 			chmod +x -R hdp-ambari-blueprints
-			cd hdp-ambari-blueprints/Single-Node-with-Kerberos/setup/
+			cd hdp-ambari-blueprints/singlenode-with-kerberos/setup/
 			sh host-ambari.sh
 			cd ../json/
 			sh configure-scripts.sh
