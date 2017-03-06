@@ -21,6 +21,7 @@ In my case, I updated /etc/hosts
 Follow the below steps - 
 
 * On Ambari-server host, execute the following - 
+
       yum install git -y
       
 
