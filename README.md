@@ -1,2 +1,3 @@
 # Using Amabri Blueprints
-- [Single Node HDP Cluster with Kerberos](./Single-Node-with-Kerberos/README.md)
+- [SingleNode HDP Cluster with Kerberos](./singlenode-with-kerberos/README.md)
+- [MultiNode HDP Cluster without Kerberos](./multinode-without-kerberos/README.md)
