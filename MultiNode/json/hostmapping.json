@@ -1,6 +1,15 @@
 {
 "blueprint" : "hdp25mn",
 "default_password" : "hadoophdp",
+"configurations" : [
+    {
+      "hive-site" : {
+        "properties" : {
+          "javax.jdo.option.ConnectionPassword" : "hadoop"
+        }
+      }
+    }
+  ],
 	"host_groups" :[
 	  {
 	  "name" : "hostname1",
