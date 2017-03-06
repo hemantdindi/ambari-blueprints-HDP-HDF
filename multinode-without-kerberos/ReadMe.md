@@ -18,10 +18,7 @@ _Ensure DNS/Rev. DNS is working among the nodes, else modify /etc/hosts on all h
 
 In my case, I updated /etc/hosts 
 
-Follow the below steps - 
-
-* On Ambari-server host, execute the following - 
-
+Follow the below steps on Ambari-server - 
 
       yum install git -y
       git clone https://github.com/hemantdindi/hdp-ambari-blueprints.git
