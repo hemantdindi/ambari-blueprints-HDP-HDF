@@ -10,6 +10,9 @@ Note that the hostnames are as below -
 
 node01.hadoophdp.com acts as the ambari server.
 
+##### On node01, execute the script - setup-ambari-server.sh
+##### On node02, node03, execute the script - setup-ambari-agent.sh
+
 ![Alt text](./images/multinode-install-1.PNG)
 
 ![Alt text](./images/multinode-install-2.PNG)
