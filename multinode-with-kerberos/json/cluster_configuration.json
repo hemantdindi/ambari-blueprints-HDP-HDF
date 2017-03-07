@@ -1,6 +1,25 @@
 {
  "configurations": [
 	 {
+		"kerberos-env": {
+		"properties_attributes": {},
+				"properties": {
+				"realm": "SPECIFYREALM",
+				"kdc_type": "mit-kdc",
+				"kdc_hosts": "blueprintclusterhost",
+				"admin_server_host": "blueprintclusterhost"
+				}
+			}
+		}, {
+		"krb5-conf": {
+		"properties_attributes": {},
+				"properties": {
+				"domains": "SPECIFYDOMAIN",
+				"manage_krb5_conf": "true"
+				}
+			}
+	},
+	 {
 	"hive-site" : {
 			"properties" : {
 			  "javax.jdo.option.ConnectionDriverName" : "org.postgresql.Driver",
@@ -24,7 +43,7 @@
 	 {
 	 "name": "hostname1",
 	 "components": [
-		 	{  "name" : "AMBARI_SERVER"     },
+		 	{  "name": "AMBARI_SERVER"      },
 			{  "name": "NAMENODE"  		}, 	 			
 			{  "name": "WEBHCAT_SERVER"  	}, 
 			{  "name": "ZOOKEEPER_SERVER"  	}, 
@@ -48,7 +67,8 @@
 			{  "name": "ZOOKEEPER_CLIENT"  	},	
 			{  "name": "YARN_CLIENT"  	}, 
 			{  "name": "MAPREDUCE2_CLIENT"  },			
-			{  "name": "TEZ_CLIENT"  	}			
+			{  "name": "TEZ_CLIENT"  	},
+		 	{  "name" : "KERBEROS_CLIENT"   }
 		],
 		"cardinality": "1"
 	}, 
@@ -73,7 +93,8 @@
 			{  "name": "ZOOKEEPER_CLIENT"  	},	
 			{  "name": "YARN_CLIENT"  	}, 
 			{  "name": "MAPREDUCE2_CLIENT"  },			
-			{  "name": "TEZ_CLIENT"  	}		
+			{  "name": "TEZ_CLIENT"  	},
+		 	{  "name" : "KERBEROS_CLIENT"   }		
 
 		],
 		"cardinality": "1"
@@ -97,7 +118,8 @@
 			{  "name": "ZOOKEEPER_CLIENT"  	},	
 			{  "name": "YARN_CLIENT"  	}, 
 			{  "name": "MAPREDUCE2_CLIENT"  },			
-			{  "name": "TEZ_CLIENT"  	}
+			{  "name": "TEZ_CLIENT"  	},
+		 	{  "name" : "KERBEROS_CLIENT"   }
 		],
 		"cardinality": "1"
 	}
@@ -105,6 +127,9 @@
  "Blueprints": {
  "blueprint_name": "hdp25mn",
  "stack_name": "HDP",
- "stack_version": "2.5"
+ "stack_version": "2.5",
+"security": {
+     "type": "KERBEROS"
+    }
  }
 }
