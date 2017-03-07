@@ -54,3 +54,33 @@ ambari-server restart
 ambari-agent restart
 ambari-server status
 ambari-agent status
+
+wget http://www.issihosts.com/haveged/haveged-1.9.1.tar.gz
+tar -zxvf haveged-1.9.1.tar.gz
+yum install -y gcc-c++
+cd ./haveged-1.9.1
+./configure
+make
+make install
+haveged -w 1024
+echo "/usr/local/sbin/haveged -w 1024" >> /etc/rc.local
+export realm=`hostname -d`
+export REALM="${realm^^}"
+export KDC_HOST=`hostname -f`
+yum -y install krb5-server krb5-libs krb5-workstation
+cp /etc/krb5.conf .
+mv /etc/krb5.conf /tmp/
+sed -i "s/EXAMPLE.COM/$REALM/g" krb5.conf
+sed -i "s/example.com/$realm/g" krb5.conf
+sed -i "s/kerberos.$realm/$KDC_HOST/g" krb5.conf
+sed -i '2,$s/#//' krb5.conf
+cp krb5.conf /etc/krb5.conf
+kdb5_util create -s -P hadoop
+service krb5kdc start
+service kadmin start
+systemctl enable krb5kdc
+systemctl enable kadmin
+kadmin.local -q "addprinc -pw hadoop admin/admin"
+sed -i "s/EXAMPLE.COM/$REALM/g" /var/kerberos/krb5kdc/kadm5.acl
+service krb5kdc restart
+service kadmin restart
