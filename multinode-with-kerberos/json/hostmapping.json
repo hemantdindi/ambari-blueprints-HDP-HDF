@@ -23,5 +23,17 @@
 	  "name" : "hostname3",
 	  "hosts" : [{"fqdn" : "HOSTNAME3" }]
 	  }
-	]
+	],
+    "credentials" : [
+     {
+       "alias" : "kdc.admin.credential",
+       "principal" : "admin/admin",
+       "key" : "hadoop",
+       "type" : "TEMPORARY"
+     }
+    ],
+    "security" : {
+        "type" : "KERBEROS"
+   },
+   "Clusters" : {"cluster_name":"hdp25sn"}
 }
