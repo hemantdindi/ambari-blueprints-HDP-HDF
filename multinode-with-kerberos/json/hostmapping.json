@@ -35,5 +35,5 @@
     "security" : {
         "type" : "KERBEROS"
    },
-   "Clusters" : {"cluster_name":"hdp25sn"}
+   "Clusters" : {"cluster_name":"hdp25mn"}
 }
