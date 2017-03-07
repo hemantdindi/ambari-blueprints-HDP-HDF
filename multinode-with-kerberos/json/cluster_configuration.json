@@ -1,0 +1,110 @@
+{
+ "configurations": [
+	 {
+	"hive-site" : {
+			"properties" : {
+			  "javax.jdo.option.ConnectionDriverName" : "org.postgresql.Driver",
+			  "javax.jdo.option.ConnectionURL" : "jdbc:postgresql://HOSTNAME1:5432/hivedb",
+			  "javax.jdo.option.ConnectionUserName": "hiveuser"
+			}
+		}
+	},
+    {
+      "hive-env" : {
+        "properties" : {
+          "hive_database" : "Existing PostgreSQL Database",
+          "hive_database_name" : "hivedb",
+          "hive_database_type" : "postgres",
+          "hive_hostname" : "HOSTNAME1"
+        }
+      }
+    }
+ ],
+ "host_groups": [
+	 {
+	 "name": "hostname1",
+	 "components": [
+		 	{  "name" : "AMBARI_SERVER"     },
+			{  "name": "NAMENODE"  		}, 	 			
+			{  "name": "WEBHCAT_SERVER"  	}, 
+			{  "name": "ZOOKEEPER_SERVER"  	}, 
+			{  "name": "STORM_UI_SERVER"  	}, 
+			{  "name": "SUPERVISOR"  	},
+			{  "name": "NIMBUS"  		},
+			{  "name": "HIVE_SERVER"  	}, 
+			{  "name": "HIVE_METASTORE"  	},
+			{  "name": "METRICS_COLLECTOR" 	},  
+			{  "name": "METRICS_MONITOR"  	}, 			
+			{  "name": "PIG" 		}, 			
+			{  "name": "HCAT"  		}, 
+			{  "name": "SQOOP"  		},			
+			{  "name": "NODEMANAGER"  	},  			
+			{  "name": "DATANODE"  		},
+			{  "name": "HBASE_REGIONSERVER" }, 			
+			{  "name": "DRPC_SERVER"  	},
+			{  "name": "HDFS_CLIENT"  	}, 
+			{  "name": "HIVE_CLIENT"  	},  
+			{  "name": "HBASE_CLIENT"  	}, 
+			{  "name": "ZOOKEEPER_CLIENT"  	},	
+			{  "name": "YARN_CLIENT"  	}, 
+			{  "name": "MAPREDUCE2_CLIENT"  },			
+			{  "name": "TEZ_CLIENT"  	}			
+		],
+		"cardinality": "1"
+	}, 
+	{
+	 "name": "hostname2",
+	 "components": [
+			{  "name": "RESOURCEMANAGER"  	}, 	 
+			{  "name": "HISTORYSERVER"	},  
+			{  "name": "APP_TIMELINE_SERVER"}, 	 
+			{  "name": "ZOOKEEPER_SERVER"	}, 
+			{  "name": "SECONDARY_NAMENODE"	}, 
+			{  "name": "METRICS_MONITOR"  	}, 			
+			{  "name": "PIG" 		}, 			
+			{  "name": "HCAT"  		}, 
+			{  "name": "SQOOP"  		},			
+			{  "name": "NODEMANAGER"  	},  			
+			{  "name": "DATANODE"  		},
+			{  "name": "HBASE_REGIONSERVER" }, 			
+			{  "name": "HDFS_CLIENT"  	}, 
+			{  "name": "HIVE_CLIENT"  	},  
+			{  "name": "HBASE_CLIENT"  	}, 
+			{  "name": "ZOOKEEPER_CLIENT"  	},	
+			{  "name": "YARN_CLIENT"  	}, 
+			{  "name": "MAPREDUCE2_CLIENT"  },			
+			{  "name": "TEZ_CLIENT"  	}		
+
+		],
+		"cardinality": "1"
+	}, 
+	{
+	"name": "hostname3",
+	"components": [
+			{  "name": "KAFKA_BROKER"  	}, 
+			{  "name": "HBASE_MASTER"  	}, 	
+			{  "name": "ZOOKEEPER_SERVER"  	}, 
+			{  "name": "METRICS_MONITOR"  	}, 			
+			{  "name": "PIG" 		}, 			
+			{  "name": "HCAT"  		}, 
+			{  "name": "SQOOP"  		},			
+			{  "name": "NODEMANAGER"  	},  			
+			{  "name": "DATANODE"  		},
+			{  "name": "HBASE_REGIONSERVER" }, 			
+			{  "name": "HDFS_CLIENT"  	}, 
+			{  "name": "HIVE_CLIENT"  	},  
+			{  "name": "HBASE_CLIENT"  	}, 
+			{  "name": "ZOOKEEPER_CLIENT"  	},	
+			{  "name": "YARN_CLIENT"  	}, 
+			{  "name": "MAPREDUCE2_CLIENT"  },			
+			{  "name": "TEZ_CLIENT"  	}
+		],
+		"cardinality": "1"
+	}
+],
+ "Blueprints": {
+ "blueprint_name": "hdp25mn",
+ "stack_name": "HDP",
+ "stack_version": "2.5"
+ }
+}
