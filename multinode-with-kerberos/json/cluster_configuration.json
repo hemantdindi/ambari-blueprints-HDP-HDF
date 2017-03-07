@@ -6,8 +6,8 @@
 				"properties": {
 				"realm": "SPECIFYREALM",
 				"kdc_type": "mit-kdc",
-				"kdc_hosts": "blueprintclusterhost",
-				"admin_server_host": "blueprintclusterhost"
+				"kdc_hosts": "KDCHOST",
+				"admin_server_host": "KDCADMINHOST"
 				}
 			}
 		}, {
