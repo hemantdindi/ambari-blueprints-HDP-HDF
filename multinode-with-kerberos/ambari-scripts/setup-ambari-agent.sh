@@ -23,6 +23,8 @@ systemctl disable firewalld
 wget -nv http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.4.2.0/ambari.repo -O /etc/yum.repos.d/ambari.repo
 wget --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.rpm
 rpm -ivh jdk-8u102-linux-x64.rpm
+wget --header "Cookie: oraclelicense=accept-securebackup-cookie"  http://download.oracle.com/otn-pub/java/jce/8/jce_policy-8.zip
+unzip -o -j -q jce_policy-8.zip -d /usr/java/default/jre/lib/security/
 echo "export JAVA_HOME=/usr/java/default" >> ~/.bashrc
 echo "export PATH=\$PATH:\$JAVA_HOME/bin" >> ~/.bashrc
 source ~/.bashrc
