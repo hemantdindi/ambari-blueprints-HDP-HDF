@@ -63,6 +63,11 @@
           "dfs.namenode.shared.edits.dir" : "qjournal://%HOSTGROUP::hostname1%:8485;%HOSTGROUP::hostname2%:8485;%HOSTGROUP::hostname3%:8485/hdpha",
           "dfs.nameservices" : "hdpha"
       }}
+    },
+    {
+      "hbase-site" : {
+        "hbase.rootdir" : "hdfs://hdpha/apps/hbase/data",
+      }
     }
  ],
  "host_groups": [
