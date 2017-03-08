@@ -1,0 +1,161 @@
+{
+ "configurations": [
+	 {
+		"kerberos-env": {
+		"properties_attributes": {},
+				"properties": {
+				"realm": "SPECIFYREALM",
+				"kdc_type": "mit-kdc",
+				"kdc_hosts": "KDCHOST",
+				"admin_server_host": "KDCADMINHOST"
+				}
+			}
+		}, {
+		"krb5-conf": {
+		"properties_attributes": {},
+				"properties": {
+				"domains": "SPECIFYDOMAIN",
+				"manage_krb5_conf": "true"
+				}
+			}
+	},
+	 {
+	"hive-site" : {
+			"properties" : {
+			  "javax.jdo.option.ConnectionDriverName" : "org.postgresql.Driver",
+			  "javax.jdo.option.ConnectionURL" : "jdbc:postgresql://HOSTNAME1:5432/hivedb",
+			  "javax.jdo.option.ConnectionUserName": "hiveuser"
+			}
+		}
+	},
+    {
+      "hive-env" : {
+        "properties" : {
+          "hive_database" : "Existing PostgreSQL Database",
+          "hive_database_name" : "hivedb",
+          "hive_database_type" : "postgres",
+          "hive_hostname" : "HOSTNAME1"
+        }
+      }
+    },
+	{
+      "core-site": {
+        "properties" : {
+          "fs.defaultFS" : "hdfs://hdpha",
+          "ha.zookeeper.quorum" : "%HOSTGROUP::hostname1%:2181,%HOSTGROUP::hostname2%:2181,%HOSTGROUP::hostname3%:2181"
+      }}
+    },
+    {
+      "hdfs-site": {
+        "properties" : {
+          "dfs.client.failover.proxy.provider.hdpha" : "org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider",
+          "dfs.ha.automatic-failover.enabled" : "true",
+          "dfs.ha.fencing.methods" : "shell(/bin/true)",
+          "dfs.ha.namenodes.hdpha" : "nn1,nn2",
+          "dfs.namenode.http-address" : "%HOSTGROUP::hostname1%:50070",
+          "dfs.namenode.http-address.hdpha.nn1" : "%HOSTGROUP::hostname1%:50070",
+          "dfs.namenode.http-address.hdpha.nn2" : "%HOSTGROUP::hostname2%:50070",
+          "dfs.namenode.https-address" : "%HOSTGROUP::hostname1%:50470",
+          "dfs.namenode.https-address.hdpha.nn1" : "%HOSTGROUP::hostname1%:50470",
+          "dfs.namenode.https-address.hdpha.nn2" : "%HOSTGROUP::hostname2%:50470",
+          "dfs.namenode.rpc-address.hdpha.nn1" : "%HOSTGROUP::hostname1%:8020",
+          "dfs.namenode.rpc-address.hdpha.nn2" : "%HOSTGROUP::hostname2%:8020",
+          "dfs.namenode.shared.edits.dir" : "qjournal://%HOSTGROUP::hostname1%:8485;%HOSTGROUP::hostname2%:8485;%HOSTGROUP::hostname3%:8485/hdpha",
+          "dfs.nameservices" : "hdpha"
+      }}
+    }
+ ],
+ "host_groups": [
+	 {
+	 "name": "hostname1",
+	 "components": [
+		 	{  "name": "AMBARI_SERVER"      },
+			{  "name": "NAMENODE"  		}, 	 
+			{ "name": "ZKFC" },
+			{ "name": "JOURNALNODE" },
+			{  "name": "WEBHCAT_SERVER"  	}, 
+			{  "name": "ZOOKEEPER_SERVER"  	}, 
+			{  "name": "HIVE_SERVER"  	}, 
+			{  "name": "HIVE_METASTORE"  	},
+			{  "name": "METRICS_COLLECTOR" 	},  
+			{  "name": "METRICS_MONITOR"  	}, 			
+			{  "name": "PIG" 		}, 			
+			{  "name": "HCAT"  		}, 
+			{  "name": "SQOOP"  		},			
+			{  "name": "NODEMANAGER"  	},  			
+			{  "name": "DATANODE"  		},
+			{  "name": "HBASE_REGIONSERVER" }, 			
+			{  "name": "HDFS_CLIENT"  	}, 
+			{  "name": "HIVE_CLIENT"  	},  
+			{  "name": "HBASE_CLIENT"  	}, 
+			{  "name": "ZOOKEEPER_CLIENT"  	},	
+			{  "name": "YARN_CLIENT"  	}, 
+			{  "name": "MAPREDUCE2_CLIENT"  },			
+			{  "name": "TEZ_CLIENT"  	},
+		 	{  "name": "KERBEROS_CLIENT"    }
+		],
+		"cardinality": "1"
+	}, 
+	{
+	 "name": "hostname2",
+	 "components": [
+			{  "name": "RESOURCEMANAGER"  	}, 	 
+			{  "name": "HISTORYSERVER"	},  
+			{  "name": "APP_TIMELINE_SERVER"}, 	 
+			{  "name": "ZOOKEEPER_SERVER"	}, 
+			{  "name": "NAMENODE"  		}, 	 
+			{ "name": "ZKFC" },			
+			{ "name": "JOURNALNODE" },
+			{  "name": "METRICS_MONITOR"  	}, 			
+			{  "name": "PIG" 		}, 			
+			{  "name": "HCAT"  		}, 
+			{  "name": "SQOOP"  		},			
+			{  "name": "NODEMANAGER"  	},  			
+			{  "name": "DATANODE"  		},
+			{  "name": "HBASE_REGIONSERVER" }, 			
+			{  "name": "HDFS_CLIENT"  	}, 
+			{  "name": "HIVE_CLIENT"  	},  
+			{  "name": "HBASE_CLIENT"  	}, 
+			{  "name": "ZOOKEEPER_CLIENT"  	},	
+			{  "name": "YARN_CLIENT"  	}, 
+			{  "name": "MAPREDUCE2_CLIENT"  },			
+			{  "name": "TEZ_CLIENT"  	},
+		 	{  "name": "KERBEROS_CLIENT"    }		
+
+		],
+		"cardinality": "1"
+	}, 
+	{
+	"name": "hostname3",
+	"components": [
+			{  "name": "HBASE_MASTER"  	}, 	
+			{  "name": "ZOOKEEPER_SERVER"  	}, 
+			{  "name": "METRICS_MONITOR"  	}, 
+			{ "name": "JOURNALNODE" },
+			{  "name": "PIG" 		}, 			
+			{  "name": "HCAT"  		}, 
+			{  "name": "SQOOP"  		},			
+			{  "name": "NODEMANAGER"  	},  			
+			{  "name": "DATANODE"  		},
+			{  "name": "HBASE_REGIONSERVER" }, 			
+			{  "name": "HDFS_CLIENT"  	}, 
+			{  "name": "HIVE_CLIENT"  	},  
+			{  "name": "HBASE_CLIENT"  	}, 
+			{  "name": "ZOOKEEPER_CLIENT"  	},	
+			{  "name": "YARN_CLIENT"  	}, 
+			{  "name": "MAPREDUCE2_CLIENT"  },			
+			{  "name": "TEZ_CLIENT"  	},
+		 	{  "name": "KERBEROS_CLIENT"    }
+		],
+		"cardinality": "1"
+	}
+],
+ "Blueprints": {
+ "blueprint_name": "hdp25mn",
+ "stack_name": "HDP",
+ "stack_version": "2.5",
+"security": {
+     "type": "KERBEROS"
+    }
+ }
+}

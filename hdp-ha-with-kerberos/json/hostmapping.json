@@ -1,0 +1,39 @@
+{
+"blueprint" : "hdp25mn",
+"default_password" : "hadoophdp",
+"configurations" : [
+    {
+      "hive-site" : {
+        "properties" : {
+          "javax.jdo.option.ConnectionPassword" : "hadoop"
+        }
+      }
+    }
+  ],
+	"host_groups" :[
+	  {
+	  "name" : "hostname1",
+	  "hosts" : [{"fqdn" : "HOSTNAME1" }]
+	  },
+	  {
+	  "name" : "hostname2",
+	  "hosts" : [{"fqdn" : "HOSTNAME2" }]
+	  },
+	  {
+	  "name" : "hostname3",
+	  "hosts" : [{"fqdn" : "HOSTNAME3" }]
+	  }
+	],
+    "credentials" : [
+     {
+       "alias" : "kdc.admin.credential",
+       "principal" : "admin/admin",
+       "key" : "hadoop",
+       "type" : "TEMPORARY"
+     }
+    ],
+    "security" : {
+        "type" : "KERBEROS"
+   },
+   "Clusters" : {"cluster_name":"hdp25mn"}
+}
