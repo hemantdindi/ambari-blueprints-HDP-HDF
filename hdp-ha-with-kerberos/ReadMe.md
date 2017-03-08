@@ -1,4 +1,4 @@
-# HDP multinode installation using Ambari Blueprints with Kerberos.
+# HDP multinode installation using Ambari Blueprints with Kerberos and HA.
 
 ##This is tested in a CentOS 7 64 Bit Servers hosted in Digital Ocean
 
@@ -26,7 +26,7 @@ Follow the below steps on Ambari-server -
 
       yum install git -y
       git clone https://github.com/hemantdindi/hdp-ambari-blueprints.git
-      cd hdp-ambari-blueprints/multinode-with-kerberos/json/
+      cd hdp-ambari-blueprints/hdp-ha-with-kerberos/json/
       chmod +x *
       ./configure-scripts.sh
       ./registerBluePrint.sh
