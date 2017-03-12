@@ -41,84 +41,32 @@
 "host_groups": [{
 "name": "hdpgroup",
 "components": [
-        {
-          "name" : "NODEMANAGER"
-        },        
-        {
-          "name" : "HIVE_SERVER"
-        },
-        {
-          "name" : "HBASE_MASTER"
-        },
-        {
-          "name" : "HIVE_METASTORE"
-        },
-        {
-          "name" : "TEZ_CLIENT"
-        },
-        {
-          "name" : "ZOOKEEPER_CLIENT"
-        },
-        {
-          "name" : "HCAT"
-        },
-        {
-          "name" : "WEBHCAT_SERVER"
-        },
-        {
-          "name" : "SECONDARY_NAMENODE"
-        },
-        {
-          "name" : "SLIDER"
-        },
-        {
-          "name" : "ZOOKEEPER_SERVER"
-        },
-        {
-          "name" : "HBASE_REGIONSERVER"
-        },
-        {
-          "name" : "KERBEROS_CLIENT"
-        },
-        {
-          "name" : "PHOENIX_QUERY_SERVER"
-        },
-        {
-          "name" : "YARN_CLIENT"
-        },
-        {
-          "name" : "HDFS_CLIENT"
-        },
-        {
-          "name" : "HISTORYSERVER"
-        },
-        {
-          "name" : "NAMENODE"
-        },
-        {
-          "name" : "PIG"
-        },
-        {
-          "name" : "MAPREDUCE2_CLIENT"
-        },
-        {
-          "name" : "AMBARI_SERVER"
-        },
-        {
-          "name" : "DATANODE"
-        },
-        {
-          "name" : "HBASE_CLIENT"
-        },
-        {
-          "name" : "APP_TIMELINE_SERVER"
-        },
-        {
-          "name" : "HIVE_CLIENT"
-        },
-        {
-          "name" : "RESOURCEMANAGER"
-        }
+{           "name" : "NODEMANAGER"          	},
+{           "name" : "HIVE_SERVER"          	},
+{           "name" : "HBASE_MASTER"         	},
+{           "name" : "HIVE_METASTORE"       	},
+{           "name" : "TEZ_CLIENT"          	},
+{           "name" : "ZOOKEEPER_CLIENT"		},
+{           "name" : "HCAT"          		},
+{           "name" : "WEBHCAT_SERVER"		},
+{           "name" : "SECONDARY_NAMENODE"	},
+{           "name" : "SLIDER"          		},
+{           "name" : "ZOOKEEPER_SERVER"		},
+{           "name" : "HBASE_REGIONSERVER"	},
+{           "name" : "KERBEROS_CLIENT"		},
+{           "name" : "PHOENIX_QUERY_SERVER"	},
+{           "name" : "YARN_CLIENT"		},
+{           "name" : "HDFS_CLIENT"          	},
+{           "name" : "HISTORYSERVER"		},
+{           "name" : "NAMENODE"			},
+{           "name" : "PIG"          		},
+{           "name" : "MAPREDUCE2_CLIENT"	},
+{           "name" : "AMBARI_SERVER"		},
+{           "name" : "DATANODE"          	},
+{           "name" : "HBASE_CLIENT"		},
+{           "name" : "APP_TIMELINE_SERVER"	},
+{           "name" : "HIVE_CLIENT"          	},
+{           "name" : "RESOURCEMANAGER"		}       
 ],
 "cardinality": 1
 }],
