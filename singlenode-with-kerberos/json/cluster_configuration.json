@@ -66,6 +66,7 @@
 {           "name" : "HBASE_CLIENT"		},
 {           "name" : "APP_TIMELINE_SERVER"	},
 {           "name" : "HIVE_CLIENT"          	},
+{  	    "name" :  "KAFKA_BROKER"  		}, 	
 {           "name" : "RESOURCEMANAGER"		}       
 ],
 "cardinality": 1
