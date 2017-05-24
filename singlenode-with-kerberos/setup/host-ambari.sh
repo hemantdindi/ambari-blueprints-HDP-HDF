@@ -25,7 +25,7 @@ systemctl enable httpd
 service firewalld stop
 systemctl disable firewalld
 wget -nv http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.0.3/ambari.repo -O /etc/yum.repos.d/ambari.repo
-wget --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.rpm
+wget https://mirror.its.sfu.ca/mirror/CentOS-Third-Party/NSG/common/x86_64/jdk-8u102-linux-x64.rpm
 rpm -ivh jdk-8u102-linux-x64.rpm
 echo "export JAVA_HOME=/usr/java/default" >> ~/.bashrc
 echo "export PATH=\$PATH:\$JAVA_HOME/bin" >> ~/.bashrc
