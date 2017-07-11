@@ -21,6 +21,8 @@ When you create the Droplet, ensure that in the User Data section, you add the s
 			ambari-server start
 			ambari-agent start
 			sh registerBluePrint.sh
+			curl -sSL https://agent.digitalocean.com/install.sh | sh
+			
 
 Login to the droplet with credentials [root/hadoophdp]
 	
