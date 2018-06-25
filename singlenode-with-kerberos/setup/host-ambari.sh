@@ -32,6 +32,7 @@ echo "export PATH=\$PATH:\$JAVA_HOME/bin" >> ~/.bashrc
 source ~/.bashrc
 yum install ambari-server -y
 ambari-server setup <<EOF
+y
 n
 3
 /usr/java/default
