@@ -46,6 +46,7 @@ wget --header "Cookie: oraclelicense=accept-securebackup-cookie"  http://downloa
 unzip -o -j -q jce_policy-8.zip -d /usr/java/default/jre/lib/security/
 ambari-server restart
 yum install ambari-agent -y
+export $HOSTNAME=`hostname -f`
 sed -i 's/hostname=localhost/'hostname="$HOSTNAME"'/g' /etc/ambari-agent/conf/ambari-agent.ini
 wget http://www.issihosts.com/haveged/haveged-1.9.1.tar.gz
 tar -zxvf haveged-1.9.1.tar.gz
