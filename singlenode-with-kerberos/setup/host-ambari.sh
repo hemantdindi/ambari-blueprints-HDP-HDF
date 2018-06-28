@@ -1,8 +1,4 @@
 #!/bin/sh
-passwd root <<EOF
-hadoophdp
-hadoophdp
-EOF
 cd ~
 mkdir node-setup
 cd node-setup
